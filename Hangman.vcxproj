@@ -22,7 +22,7 @@
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{ba389081-798c-463b-8e89-ed475a4c6167}</ProjectGuid>
-    <RootNamespace>Hangman17N</RootNamespace>
+    <RootNamespace>Hangman</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectName>Hangman</ProjectName>
   </PropertyGroup>

@@ -163,7 +163,17 @@ void playHangman() {
 		win = 1;
 		int guess = 0;
 		printf("Enter a letter.\n");
-		char gamechar = tolower(_getch());
+		char gamechar;
+		do {
+			gamechar = _getch(); // Get one character input from the user.
+			gamechar = tolower((unsigned char)gamechar); // Convert to lowercase.
+
+			// If it's not an alphabetic character, keep prompting.
+			if (!isalpha((unsigned char)gamechar)) {
+				printf("Please enter a letter.\n");
+			}
+
+		} while (!isalpha((unsigned char)gamechar));
 		// Scenario when the user enters a letter they have already entered previously.
 		for (int i = 0; i < wordLength; i++) {
 			if (gamechar == underscores[i] || gamechar == wrongCharacters[i]) {
@@ -232,16 +242,14 @@ int main(void) {
 	char playAgain;
 
 	do {
-		playHangman(); // Play a round of Hangman
-
-		// Ask the user if they want to play again
+		playHangman(); // Play a round of Hangman.
 		printf("Do you want to play again? (Y/N): ");
-		playAgain = _getch(); // Reads a single character
+		scanf_s(" %c", &playAgain); // A space is added before %c to skip any leftover newline characters.
 
 		while (getchar() != '\n'); // Clears the input buffer.
 
 	} while (playAgain == 'Y' || playAgain == 'y');
 
-	printf("Thanks for playing!\n");
+	printf("I hope you return soon!\n");
 	return 0;
 }
