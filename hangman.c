@@ -162,7 +162,7 @@ void playHangman() {
 		int letterRepeat = 0;
 		win = 1;
 		int guess = 0;
-		printf("Enter a letter.\n");
+		printf("\nEnter a letter:\n");
 		char gamechar;
 		do {
 			gamechar = _getch(); // Get one character input from the user.
@@ -243,7 +243,7 @@ int main(void) {
 
 	do {
 		playHangman(); // Play a round of Hangman.
-		printf("Do you want to play again? (Y/N): ");
+		printf("Would you like to play again? Enter Y if so, and enter anything else if you'd like to quit. ");
 		scanf_s(" %c", &playAgain); // A space is added before %c to skip any leftover newline characters.
 
 		while (getchar() != '\n'); // Clears the input buffer.
